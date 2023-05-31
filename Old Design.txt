@@ -1,0 +1,54 @@
+import random
+import json
+import string
+
+
+def load_responses():
+    with open("responses.json", "r") as file:
+        responses = json.load(file)
+    return responses
+
+
+def preprocess_input(input_text):
+    input_text = input_text.lower()
+    input_text = input_text.translate(str.maketrans("", "", string.punctuation))
+    return input_text
+
+
+def select_response(input_text, responses):
+    for key in responses:
+        keys = key.split("|")
+        for k in keys:
+            if k in input_text:
+                return random.choice(responses[key])
+    return None
+
+
+def get_user_input():
+    return input("User: ")
+
+
+def display_response(response):
+    print("Chatbot: " + response)
+
+
+def chatbot(responses):
+    print("Hello, I am Chatbot. How can I help you today?")
+    while True:
+        user_input = get_user_input()
+        preprocessed_input = preprocess_input(user_input)
+        response = select_response(preprocessed_input, responses)
+        if response is None:
+            response = "I'm sorry, I didn't understand what you said."
+        display_response(response)
+        if user_input.lower() == "bye":
+            break
+
+
+def main():
+    responses = load_responses()
+    chatbot(responses)
+
+
+if __name__ == "__main__":
+    main()

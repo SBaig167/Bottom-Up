@@ -1,0 +1,66 @@
+{
+  "hi|hello|hey": [
+    "Hello!",
+    "Hi there!",
+    "Hey!",
+    "Hey, how can I assist you?",
+    "Hi! How can I help you today?",
+    "Greetings!",
+    "Nice to meet you!",
+    "Hey, what's up?",
+    "Hi, how's it going?",
+    "Hello, how can I be of service?"
+  ],
+  "how are you|how's it going?|how's everything?": [
+    "I'm doing well, thank you for asking.",
+    "I'm great, thanks for asking!"
+  ],
+  "what's your name": [
+    "My name is Chatbot.",
+    "You can call me Chatbot!"
+  ],
+  "what are you doing|are you doing anything?": [
+    "I don't know as I'm an AI.",
+    "I'm currently talking to you."
+  ],
+  "bye|see you|take care": [
+    "Goodbye!",
+    "See you later!",
+    "Bye!",
+    "Farewell!",
+    "Take care!",
+    "Have a great day!"
+  ],
+  "tell me a joke|say something funny": [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!",
+    "I used to play piano by ear, but now I use my hands!",
+    "Why don't skeletons fight each other? They don't have the guts!"
+  ],
+  "what's the weather like today?|tell me the weather forecast": [
+    "Since I'm AI, I cannot provide you information about the weather."
+  ],
+  "tell me a fun fact|share an interesting fact": [
+    "A group of flamingos is called a flamboyance.",
+    "The shortest war in history lasted only 38 minutes!",
+    "Cows have best friends and can become stressed when they are separated."
+  ],
+  "what's your favourite movie?|tell me about your favorite film": [
+    "I don't have personal preferences as I'm an AI, but many people enjoy the movie 'Avengers: Endgame'.",
+    "One popular film among viewers is 'The Godfather'.",
+    "A classic movie that is loved by many is 'Casablanca'."
+  ],
+  "do you have any hobbies?|what do you like to do in your free time?": [
+    "Since I'm an AI, I don't have physical form or free time to have hobbies.",
+    "I'm constantly learning and assisting users like you, so that keeps me occupied."
+  ],
+  "what's your favourite book?|tell me about a book you like": [
+    "As an AI, I don't have personal preferences, but 'To Kill a Mockingbird' is a widely acclaimed novel.",
+    "'Pride and Prejudice' by Jane Austen is a classic that many people enjoy.",
+    "One popular book that has captivated readers is 'Harry Potter and the Sorcerer's Stone'."
+  ],
+  "where are you from?|what's your origin?": [
+    "I was created by OpenAI, so you can say I'm from the digital world.",
+    "I don't have a physical location as I exist in the realm of artificial intelligence."
+  ]
+}

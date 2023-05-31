@@ -1,0 +1,57 @@
+import random
+import json
+import string
+import tkinter as tk
+from tkinter import scrolledtext
+
+
+def load_responses():
+    with open("responses.json", "r") as file:
+        responses = json.load(file)
+    return responses
+
+
+def process_input(input_text, responses):
+    input_text = input_text.lower()
+    input_text = input_text.translate(str.maketrans("", "", string.punctuation))
+    for key in responses:
+        keys = key.split("|")
+        for k in keys:
+            k = k.lower()
+            k = k.translate(str.maketrans("", "", string.punctuation))
+            if k in input_text:
+                return random.choice(responses[key])
+    return "I'm sorry, I didn't understand what you said."
+
+
+def send_message():
+    user_input = input_box.get("1.0", tk.END).strip()
+    input_box.delete("1.0", tk.END)
+    if user_input.lower() == "bye":
+        chat_log.insert(tk.END, "User: " + user_input + "\n")
+        chat_log.insert(tk.END, "Chatbot: Goodbye!\n")
+    else:
+        response = process_input(user_input, chat_responses)
+        chat_log.insert(tk.END, "User: " + user_input + "\n")
+        chat_log.insert(tk.END, "Chatbot: " + response + "\n")
+        chat_log.insert(tk.END, "\n")
+
+
+if __name__ == "__main__":
+    chat_responses = load_responses()
+
+    window = tk.Tk()
+    window.title("Chatbot GUI")
+
+    chat_log = scrolledtext.ScrolledText(window, width=50, height=20)
+    chat_log.pack()
+
+    input_box = tk.Text(window, width=50, height=3)
+    input_box.pack()
+
+    send_button = tk.Button(window, text="Send", command=send_message)
+    send_button.pack()
+
+    window.bind("<Return>", lambda event: send_message())  # Bind <Return> key to send_message function
+
+    window.mainloop()
